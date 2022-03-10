@@ -18,6 +18,12 @@ variable "log_bucket_name" {
   default     = null
 }
 
+variable "log_prefix" {
+  description = "The prefix (path) for logs in the logging bucket."
+  type        = string
+  default     = null
+}
+
 variable "iam_name" {
   description = "The name to give IAM resources"
   type        = string

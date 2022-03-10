@@ -40,7 +40,7 @@ resource "aws_s3_bucket_logging" "site" {
   bucket = aws_s3_bucket.site.id
 
   target_bucket = aws_s3_bucket.site_logs.id
-  target_prefix = var.domain
+  target_prefix = var.log_prefix != null ? var.log_prefix : var.domain
 }
 
 # Log bucket
