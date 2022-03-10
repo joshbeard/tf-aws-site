@@ -1,12 +1,21 @@
 # ------------------------------------------------------------------------------
 # input variable definitions
 # ------------------------------------------------------------------------------
-variable "bucket_name" {
-  type    = string
+variable "domain" {
+  description = "The DNS name of the site."
+  type        = string
 }
 
-variable "domain" {
-  type    = string
+variable "bucket_name" {
+  description = "The name of the S3 bucket to manage for the web content."
+  type        = string
+  default     = null
+}
+
+variable "log_bucket_name" {
+  description = "The name of the S3 bucket to manage for logging."
+  type        = string
+  default     = null
 }
 
 variable "iam_name" {
@@ -24,4 +33,10 @@ variable "cf_aliases" {
   description = "Aliases for the CloudFront distribution. By default, domain and www.domain are added."
   type        = list
   default     = []
+}
+
+variable "tags" {
+  description = "Map of tags to apply to all resources."
+  type        = map
+  default     = {}
 }

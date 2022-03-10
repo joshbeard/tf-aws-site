@@ -27,11 +27,13 @@ resource "aws_iam_policy" "site_deploy" {
   name   = var.iam_name
   path   = "/"
   policy = data.aws_iam_policy_document.site_deploy.json
+  tags   = local.tags
 }
 
 resource "aws_iam_user" "site_deployer" {
   name = var.iam_name
   path = "/"
+  tags = local.tags
 }
 
 resource "aws_iam_user_policy_attachment" "site_deploy" {

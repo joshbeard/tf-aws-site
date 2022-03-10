@@ -19,7 +19,7 @@ resource "aws_acm_certificate" "site" {
   }
 
   tags = {
-    "Name" = "${var.domain}"
+    merge(local.tags, { "Name" = "${var.domain}" })
   }
 }
 

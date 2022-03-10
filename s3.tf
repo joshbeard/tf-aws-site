@@ -2,10 +2,10 @@
 # S3 website bucket
 # ------------------------------------------------------------------------------
 resource "aws_s3_bucket" "site" {
-  bucket = var.bucket_name
+  bucket = local.bucket_name
 
   tags = {
-    "Name" = var.bucket_name
+    merge(local.tags, { "Name" = "${local.bucket_name}" })
   }
 }
 
@@ -47,8 +47,11 @@ resource "aws_s3_bucket_logging" "site" {
 
 # Log bucket
 resource "aws_s3_bucket" "site_logs" {
-  bucket        = "${var.bucket_name}-logs"
+  bucket        = local.log_bucket_name
   force_destroy = true
+  tags = {
+    merge(local.tags, { "Name" = "${local.log_bucket_name}" })
+  }
 }
 
 resource "aws_s3_bucket_acl" "site_logs" {
