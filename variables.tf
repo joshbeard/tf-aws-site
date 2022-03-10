@@ -15,12 +15,6 @@ variable "subject_alternative_names" {
   default     = []
 }
 
-variable "root_txt_records" {
-  description = "List of TXT records to add to the root domain."
-  type        = list
-  default     = []
-}
-
 variable "cf_aliases" {
   description = "Aliases for the CloudFront distribution. By default, domain and www.domain are added."
   type        = list

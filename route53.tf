@@ -48,14 +48,3 @@ resource "aws_route53_record" "site-www-a" {
     evaluate_target_health = false
   }
 }
-
-#
-# ==== TXT
-#
-resource "aws_route53_record" "site-txt" {
-  zone_id = aws_route53_zone.site.zone_id
-  name    = var.domain
-  type    = "TXT"
-  ttl     = 300
-  records = compact(var.root_txt_records)
-}
