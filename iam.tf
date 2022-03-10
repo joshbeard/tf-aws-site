@@ -33,3 +33,8 @@ resource "aws_iam_user" "site_deployer" {
   name = var.iam_name
   path = "/"
 }
+
+resource "aws_iam_user_policy_attachment" "site_deploy" {
+  user       = aws_iam_user.site_deployer.name
+  policy_arn = aws_iam_policy.site_deploy.arn
+}
