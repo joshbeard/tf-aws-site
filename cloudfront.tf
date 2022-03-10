@@ -31,7 +31,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
   logging_config {
     include_cookies = false
     bucket          = aws_s3_bucket.site_logs.bucket_domain_name
-    prefix          = "${var.domain}/"
+    prefix          = var.log_prefix != null ? var.log_prefix : "${var.domain}/"
   }
 
   default_cache_behavior {
