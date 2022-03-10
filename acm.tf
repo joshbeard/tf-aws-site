@@ -18,9 +18,7 @@ resource "aws_acm_certificate" "site" {
       certificate_transparency_logging_preference = "ENABLED"
   }
 
-  tags = {
-    merge(local.tags, { "Name" = "${var.domain}" })
-  }
+  tags = merge(local.tags, { "Name" = var.domain })
 }
 
 resource "aws_acm_certificate_validation" "site" {
