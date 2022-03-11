@@ -4,7 +4,7 @@
 resource "aws_cloudfront_distribution" "site_distribution" {
   origin {
     domain_name = aws_s3_bucket.site.website_endpoint
-    origin_id   = "S3Origin-${var.bucket_name}"
+    origin_id   = "S3Origin-${aws_s3_bucket.site.bucket}"
 
     custom_origin_config {
       http_port                = 80
@@ -12,11 +12,11 @@ resource "aws_cloudfront_distribution" "site_distribution" {
       origin_keepalive_timeout = 5
       origin_protocol_policy   = "http-only"
       origin_read_timeout      = 30
-      origin_ssl_protocols     = [
-          "TLSv1",
-          "TLSv1.1",
-          "TLSv1.2",
-        ]
+      origin_ssl_protocols = [
+        "TLSv1",
+        "TLSv1.1",
+        "TLSv1.2",
+      ]
     }
   }
 
@@ -26,7 +26,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
-  aliases = compact(concat(["www.${var.domain}",var.domain], var.cf_aliases))
+  aliases = compact(concat(["www.${var.domain}", var.domain], var.cf_aliases))
 
   logging_config {
     include_cookies = false

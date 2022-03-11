@@ -5,13 +5,13 @@
 # ensure they are deployed to the proper region.
 # ------------------------------------------------------------------------------
 provider "aws" {
-  region  = "us-west-2"
+  region = "us-west-2"
 }
 
 # Certificates use the 'us-east-1' region.
 provider "aws" {
-  region  = "us-east-1"
-  alias   = "cert"
+  region = "us-east-1"
+  alias  = "cert"
 }
 
 terraform {

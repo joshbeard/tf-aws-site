@@ -79,5 +79,5 @@ resource "aws_s3_bucket_policy" "site_policy" {
 }
 
 output "website_endpoint" {
-    value = aws_s3_bucket.site.website_endpoint
+  value = aws_s3_bucket.site.website_endpoint
 }

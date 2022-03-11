@@ -5,9 +5,9 @@
 # corresponding DNS records in Route53.
 # ------------------------------------------------------------------------------
 resource "aws_acm_certificate" "site" {
-  provider          = aws.cert
-  domain_name       = var.domain
-  validation_method = "DNS"
+  provider                  = aws.cert
+  domain_name               = var.domain
+  validation_method         = "DNS"
   subject_alternative_names = compact(concat(["*.${var.domain}"], var.subject_alternative_names))
 
   lifecycle {
@@ -15,7 +15,7 @@ resource "aws_acm_certificate" "site" {
   }
 
   options {
-      certificate_transparency_logging_preference = "ENABLED"
+    certificate_transparency_logging_preference = "ENABLED"
   }
 
   tags = merge(local.tags, { "Name" = var.domain })

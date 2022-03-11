@@ -1,6 +1,6 @@
 data "aws_iam_policy_document" "site_deploy" {
   statement {
-    sid     = "DeployWebsite"
+    sid = "DeployWebsite"
     actions = [
       "s3:DeleteObject",
       "s3:ListBucket",
@@ -9,13 +9,13 @@ data "aws_iam_policy_document" "site_deploy" {
       "s3:PutObjectVersionAcl"
     ]
     resources = [
-      "arn:aws:s3:::${var.bucket_name}/*",
-      "arn:aws:s3:::${var.bucket_name}"
+      "arn:aws:s3:::${aws_s3_bucket.site.bucket}/*",
+      "arn:aws:s3:::${aws_s3_bucket.site.bucket}"
     ]
   }
 
   statement {
-    sid     = "DeployWebsiteCloudfront"
+    sid = "DeployWebsiteCloudfront"
     actions = [
       "cloudfront:CreateInvalidation"
     ]
@@ -24,14 +24,14 @@ data "aws_iam_policy_document" "site_deploy" {
 }
 
 resource "aws_iam_policy" "site_deploy" {
-  name   = var.iam_name
+  name   = local.iam_name
   path   = "/"
   policy = data.aws_iam_policy_document.site_deploy.json
   tags   = local.tags
 }
 
 resource "aws_iam_user" "site_deployer" {
-  name = var.iam_name
+  name = local.iam_name
   path = "/"
   tags = local.tags
 }
