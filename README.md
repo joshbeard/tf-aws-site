@@ -30,8 +30,8 @@ module "somesite_aws" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.0 |
-| <a name="provider_aws.cert"></a> [aws.cert](#provider\_aws.cert) | ~> 4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.4.0 |
+| <a name="provider_aws.cert"></a> [aws.cert](#provider\_aws.cert) | 4.4.0 |
 
 ## Modules
 
@@ -66,12 +66,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the S3 bucket to manage for the web content. | `string` | `null` | no |
+| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the S3 bucket to manage for the web content. By default, this is s3-website-DOMAINSLUG | `string` | `null` | no |
 | <a name="input_cf_aliases"></a> [cf\_aliases](#input\_cf\_aliases) | Aliases for the CloudFront distribution. By default, domain and www.domain are added. | `list(any)` | `[]` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | The DNS name of the site. | `string` | n/a | yes |
-| <a name="input_iam_name"></a> [iam\_name](#input\_iam\_name) | The name to give IAM resources | `string` | `null` | no |
-| <a name="input_log_bucket_name"></a> [log\_bucket\_name](#input\_log\_bucket\_name) | The name of the S3 bucket to manage for logging. | `string` | `null` | no |
-| <a name="input_log_prefix"></a> [log\_prefix](#input\_log\_prefix) | The prefix (path) for logs in the logging bucket. | `string` | `null` | no |
+| <a name="input_iam_name"></a> [iam\_name](#input\_iam\_name) | The name to give IAM resources. By default, this is s3-deployer-DOMAINSLUG | `string` | `null` | no |
+| <a name="input_log_bucket_name"></a> [log\_bucket\_name](#input\_log\_bucket\_name) | The name of the S3 bucket to manage for logging. By default, this is s3-website-DOMAINSLUG-logs | `string` | `null` | no |
+| <a name="input_log_prefix"></a> [log\_prefix](#input\_log\_prefix) | The prefix (path) for logs in the logging bucket. By default, this is the value of 'domain' | `string` | `null` | no |
 | <a name="input_subject_alternative_names"></a> [subject\_alternative\_names](#input\_subject\_alternative\_names) | Additional subject\_alternative\_names to add to the certificate request (ACM). By default, *.domain is added. | `list(any)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to apply to all resources. | `map(any)` | `{}` | no |
 

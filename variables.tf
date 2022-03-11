@@ -7,25 +7,25 @@ variable "domain" {
 }
 
 variable "bucket_name" {
-  description = "The name of the S3 bucket to manage for the web content."
+  description = "The name of the S3 bucket to manage for the web content. By default, this is s3-website-DOMAINSLUG"
   type        = string
   default     = null
 }
 
 variable "log_bucket_name" {
-  description = "The name of the S3 bucket to manage for logging."
+  description = "The name of the S3 bucket to manage for logging. By default, this is s3-website-DOMAINSLUG-logs"
   type        = string
   default     = null
 }
 
 variable "log_prefix" {
-  description = "The prefix (path) for logs in the logging bucket."
+  description = "The prefix (path) for logs in the logging bucket. By default, this is the value of 'domain'"
   type        = string
   default     = null
 }
 
 variable "iam_name" {
-  description = "The name to give IAM resources"
+  description = "The name to give IAM resources. By default, this is s3-deployer-DOMAINSLUG"
   type        = string
   default     = null
 }
