@@ -101,5 +101,4 @@ No modules.
 | <a name="output_s3_bucket_website_domain"></a> [s3\_bucket\_website\_domain](#output\_s3\_bucket\_website\_domain) | n/a |
 | <a name="output_s3_bucket_website_domain_name"></a> [s3\_bucket\_website\_domain\_name](#output\_s3\_bucket\_website\_domain\_name) | n/a |
 | <a name="output_s3_bucket_website_endpoint"></a> [s3\_bucket\_website\_endpoint](#output\_s3\_bucket\_website\_endpoint) | n/a |
-| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | Legacy output |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

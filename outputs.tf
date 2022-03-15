@@ -58,11 +58,6 @@ output "route53_name_servers" {
   value = aws_route53_zone.site.name_servers
 }
 
-# Legacy output
-output "zone_id" {
-  value = aws_route53_zone.site.zone_id
-}
-
 output "s3_bucket_arn" {
   value = aws_s3_bucket.site.arn
 }
