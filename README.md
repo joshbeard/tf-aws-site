@@ -79,6 +79,27 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_website_endpoint"></a> [website\_endpoint](#output\_website\_endpoint) | n/a |
-| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | n/a |
+| <a name="output_acm_arn"></a> [acm\_arn](#output\_acm\_arn) | n/a |
+| <a name="output_acm_domain_name"></a> [acm\_domain\_name](#output\_acm\_domain\_name) | n/a |
+| <a name="output_acm_domain_status"></a> [acm\_domain\_status](#output\_acm\_domain\_status) | n/a |
+| <a name="output_acm_id"></a> [acm\_id](#output\_acm\_id) | n/a |
+| <a name="output_cloudfront_aliases"></a> [cloudfront\_aliases](#output\_cloudfront\_aliases) | n/a |
+| <a name="output_cloudfront_arn"></a> [cloudfront\_arn](#output\_cloudfront\_arn) | n/a |
+| <a name="output_cloudfront_domain_name"></a> [cloudfront\_domain\_name](#output\_cloudfront\_domain\_name) | n/a |
+| <a name="output_cloudfront_id"></a> [cloudfront\_id](#output\_cloudfront\_id) | n/a |
+| <a name="output_iam_deploy_policy_arn"></a> [iam\_deploy\_policy\_arn](#output\_iam\_deploy\_policy\_arn) | n/a |
+| <a name="output_iam_deploy_policy_name"></a> [iam\_deploy\_policy\_name](#output\_iam\_deploy\_policy\_name) | n/a |
+| <a name="output_iam_deploy_user_arn"></a> [iam\_deploy\_user\_arn](#output\_iam\_deploy\_user\_arn) | n/a |
+| <a name="output_iam_deploy_user_name"></a> [iam\_deploy\_user\_name](#output\_iam\_deploy\_user\_name) | n/a |
+| <a name="output_route53_name_servers"></a> [route53\_name\_servers](#output\_route53\_name\_servers) | n/a |
+| <a name="output_route53_zone_arn"></a> [route53\_zone\_arn](#output\_route53\_zone\_arn) | n/a |
+| <a name="output_route53_zone_id"></a> [route53\_zone\_id](#output\_route53\_zone\_id) | n/a |
+| <a name="output_s3_bucket_arn"></a> [s3\_bucket\_arn](#output\_s3\_bucket\_arn) | n/a |
+| <a name="output_s3_bucket_domain_name"></a> [s3\_bucket\_domain\_name](#output\_s3\_bucket\_domain\_name) | n/a |
+| <a name="output_s3_bucket_name"></a> [s3\_bucket\_name](#output\_s3\_bucket\_name) | n/a |
+| <a name="output_s3_bucket_regional_domain_name"></a> [s3\_bucket\_regional\_domain\_name](#output\_s3\_bucket\_regional\_domain\_name) | n/a |
+| <a name="output_s3_bucket_website_domain"></a> [s3\_bucket\_website\_domain](#output\_s3\_bucket\_website\_domain) | n/a |
+| <a name="output_s3_bucket_website_domain_name"></a> [s3\_bucket\_website\_domain\_name](#output\_s3\_bucket\_website\_domain\_name) | n/a |
+| <a name="output_s3_bucket_website_endpoint"></a> [s3\_bucket\_website\_endpoint](#output\_s3\_bucket\_website\_endpoint) | n/a |
+| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | Legacy output |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

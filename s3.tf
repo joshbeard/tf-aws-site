@@ -77,7 +77,3 @@ resource "aws_s3_bucket_policy" "site_policy" {
   bucket = aws_s3_bucket.site.id
   policy = data.aws_iam_policy_document.site_policies.json
 }
-
-output "website_endpoint" {
-  value = aws_s3_bucket.site.website_endpoint
-}
