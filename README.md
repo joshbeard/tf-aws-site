@@ -68,6 +68,9 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the S3 bucket to manage for the web content. By default, this is s3-website-DOMAINSLUG | `string` | `null` | no |
 | <a name="input_cf_aliases"></a> [cf\_aliases](#input\_cf\_aliases) | Aliases for the CloudFront distribution. By default, domain and www.domain are added. | `list(any)` | `[]` | no |
+| <a name="input_cf_default_ttl"></a> [cf\_default\_ttl](#input\_cf\_default\_ttl) | The default TTL for the CloudFront distribution default behavior. | `number` | `2592000` | no |
+| <a name="input_cf_max_ttl"></a> [cf\_max\_ttl](#input\_cf\_max\_ttl) | The maximum TTL for the CloudFront distribution default behavior. | `number` | `7776000` | no |
+| <a name="input_cf_min_ttl"></a> [cf\_min\_ttl](#input\_cf\_min\_ttl) | The minimum TTL for the CloudFront distribution default behavior. | `number` | `0` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | The DNS name of the site. | `string` | n/a | yes |
 | <a name="input_iam_name"></a> [iam\_name](#input\_iam\_name) | The name to give IAM resources. By default, this is s3-deployer-DOMAINSLUG | `string` | `null` | no |
 | <a name="input_log_bucket_name"></a> [log\_bucket\_name](#input\_log\_bucket\_name) | The name of the S3 bucket to manage for logging. By default, this is s3-website-DOMAINSLUG-logs | `string` | `null` | no |

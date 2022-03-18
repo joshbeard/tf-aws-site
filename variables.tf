@@ -42,6 +42,24 @@ variable "cf_aliases" {
   default     = []
 }
 
+variable "cf_min_ttl" {
+  description = "The minimum TTL for the CloudFront distribution default behavior."
+  type        = number
+  default     = 0
+}
+
+variable "cf_max_ttl" {
+  description = "The maximum TTL for the CloudFront distribution default behavior."
+  type        = number
+  default     = 7776000
+}
+
+variable "cf_default_ttl" {
+  description = "The default TTL for the CloudFront distribution default behavior."
+  type        = number
+  default     = 2592000
+}
+
 variable "tags" {
   description = "Map of tags to apply to all resources."
   type        = map(any)
