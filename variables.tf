@@ -60,6 +60,12 @@ variable "cf_default_ttl" {
   default     = 2592000
 }
 
+variable "cf_logs" {
+  description = "Enables or disables CloudFront log collection into CloudWatch via Lambda."
+  type        = bool
+  default     = true
+}
+
 variable "tags" {
   description = "Map of tags to apply to all resources."
   type        = map(any)

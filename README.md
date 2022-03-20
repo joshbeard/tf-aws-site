@@ -35,7 +35,9 @@ module "somesite_aws" {
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_cloudfront_logs"></a> [cloudfront\_logs](#module\_cloudfront\_logs) | ./cloudfront-logs | n/a |
 
 ## Resources
 
@@ -69,6 +71,7 @@ No modules.
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the S3 bucket to manage for the web content. By default, this is s3-website-DOMAINSLUG | `string` | `null` | no |
 | <a name="input_cf_aliases"></a> [cf\_aliases](#input\_cf\_aliases) | Aliases for the CloudFront distribution. By default, domain and www.domain are added. | `list(any)` | `[]` | no |
 | <a name="input_cf_default_ttl"></a> [cf\_default\_ttl](#input\_cf\_default\_ttl) | The default TTL for the CloudFront distribution default behavior. | `number` | `2592000` | no |
+| <a name="input_cf_logs"></a> [cf\_logs](#input\_cf\_logs) | Enables or disables CloudFront log collection into CloudWatch via Lambda. | `bool` | `true` | no |
 | <a name="input_cf_max_ttl"></a> [cf\_max\_ttl](#input\_cf\_max\_ttl) | The maximum TTL for the CloudFront distribution default behavior. | `number` | `7776000` | no |
 | <a name="input_cf_min_ttl"></a> [cf\_min\_ttl](#input\_cf\_min\_ttl) | The minimum TTL for the CloudFront distribution default behavior. | `number` | `0` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | The DNS name of the site. | `string` | n/a | yes |

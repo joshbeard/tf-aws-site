@@ -68,3 +68,13 @@ resource "aws_cloudfront_distribution" "site_distribution" {
 
   tags = local.tags
 }
+
+module "cloudfront_logs" {
+  count  = var.cf_logs ? 1 : 0
+  source = "./cloudfront-logs"
+
+  name        = local.hyphen_domain_name
+  name_prefix = "cf-logs"
+  tags        = local.tags
+  log_bucket  = aws_s3_bucket.site_logs.bucket
+}
