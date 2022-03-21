@@ -5,7 +5,7 @@
 # ensure they are deployed to the proper region.
 # ------------------------------------------------------------------------------
 provider "aws" {
-  region = "us-west-2"
+  region = var.region
 }
 
 # Certificates use the 'us-east-1' region.

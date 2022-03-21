@@ -24,6 +24,12 @@ variable "log_prefix" {
   default     = null
 }
 
+variable "region" {
+  description = "The AWS region"
+  type        = string
+  default     = "us-west-2"
+}
+
 variable "iam_name" {
   description = "The name to give IAM resources. By default, this is s3-deployer-DOMAINSLUG"
   type        = string
