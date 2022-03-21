@@ -1,22 +1,21 @@
 # ------------------------------------------------------------------------------
 # CloudFront distribution
 # ------------------------------------------------------------------------------
+resource "aws_cloudfront_origin_access_identity" "site" {
+  comment = "${var.domain}-cf-s3"
+}
+
 resource "aws_cloudfront_distribution" "site_distribution" {
   origin {
-    domain_name = aws_s3_bucket.site.website_endpoint
+    domain_name = aws_s3_bucket.site.bucket_regional_domain_name
     origin_id   = "S3Origin-${aws_s3_bucket.site.bucket}"
+    s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.site.cloudfront_access_identity_path
+    }
 
-    custom_origin_config {
-      http_port                = 80
-      https_port               = 443
-      origin_keepalive_timeout = 5
-      origin_protocol_policy   = "http-only"
-      origin_read_timeout      = 30
-      origin_ssl_protocols = [
-        "TLSv1",
-        "TLSv1.1",
-        "TLSv1.2",
-      ]
+    origin_shield {
+      enabled              = true
+      origin_shield_region = "us-west-2"
     }
   }
 
@@ -63,7 +62,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate.site.arn
     ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1.2_2019"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 
   tags = local.tags

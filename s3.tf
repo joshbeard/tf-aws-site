@@ -58,18 +58,13 @@ resource "aws_s3_bucket_acl" "site_logs" {
 
 data "aws_iam_policy_document" "site_policies" {
   statement {
-    actions = [
-      "s3:GetObject",
-    ]
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.site.arn}/*"]
 
     principals {
-      type        = "*"
-      identifiers = ["*"]
+      type        = "AWS"
+      identifiers = ["${aws_cloudfront_origin_access_identity.site.iam_arn}"]
     }
-
-    resources = [
-      "arn:aws:s3:::${aws_s3_bucket.site.bucket}/*",
-    ]
   }
 }
 
