@@ -1,9 +1,6 @@
 # ------------------------------------------------------------------------------
 # CloudFront distribution
 # ------------------------------------------------------------------------------
-resource "aws_cloudfront_origin_access_identity" "site" {
-  comment = "${var.domain}-cf-s3"
-}
 resource "aws_cloudfront_distribution" "site_distribution" {
   origin {
     domain_name = aws_s3_bucket.site.website_endpoint
