@@ -10,7 +10,7 @@ repos:
 # Disabled for CI until I have a solution for running Terraform + pre-commit
 # Need a Docker image, maybe?
   - repo: https://github.com/antonbabenko/pre-commit-terraform.git
-    rev: v1.62.3
+    rev: v1.64.0
     hooks:
       - id: terraform_fmt
       - id: terraform_tflint
