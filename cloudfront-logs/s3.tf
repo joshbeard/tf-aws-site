@@ -1,17 +1,3 @@
-#data "aws_iam_policy_document" "s3_bucket_readonly" {
-#  statement {
-#    actions = [
-#      "s3:Get*",
-#      "s3:List*",
-#    ]
-#
-#    resources = [
-#      data.aws_s3_bucket.this.arn,
-#      "${data.aws_s3_bucket.this.arn}/*",
-#    ]
-#  }
-#}
-
 resource "aws_s3_bucket_notification" "this" {
   bucket = var.log_bucket
 

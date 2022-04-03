@@ -2,8 +2,13 @@
 
 This deploys a Lambda function that imports CloudFront logs from S3 into CloudWatch.
 
-The source is from <https://github.com/fmasuhr/terraform-aws-cloudfront-logs> with
-some modifications.
+The source is based on <https://github.com/fmasuhr/terraform-aws-cloudfront-logs> with
+some modifications, including:
+
+* Add a `name_prefix` to resources.
+* Don't manage the S3 bucket - use an existing bucket via a data lookup.
+
+The original source and this derivative are licensed under the [MIT License](LICENSE).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -41,6 +46,7 @@ No modules.
 | [aws_iam_policy_document.logs_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.s3_bucket_readonly](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+| [aws_s3_bucket.logging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/s3_bucket) | data source |
 
 ## Inputs
 
