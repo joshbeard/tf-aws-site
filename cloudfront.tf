@@ -78,7 +78,8 @@ module "cloudfront_logs" {
   count  = var.cf_logs ? 1 : 0
   source = "./cloudfront-logs"
 
-  name        = "cf-logs-${local.hyphen_domain_name}"
+  name        = local.hyphen_domain_name
+  name_prefix = "cf-logs"
   tags        = local.tags
-  bucket_name = aws_s3_bucket.site_logs.arn
+  log_bucket  = aws_s3_bucket.site_logs.arn
 }
