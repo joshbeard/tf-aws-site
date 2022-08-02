@@ -1,5 +1,8 @@
 # Simple AWS Site Terraform Module
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e0b629fbd8644ecbbc5432be24c64947)](https://www.codacy.com/gh/joshbeard/tf-aws-site/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=joshbeard/tf-aws-site&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/joshbeard/tf-aws-site/badge)](https://www.codefactor.io/repository/github/joshbeard/tf-aws-site)
+
 This is a personal Terraform module for deploying a simple website on AWS.
 
 * S3 bucket for the site with logging bucket
