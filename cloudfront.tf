@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
       }
     }
 
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = var.cf_viewer_protocol_policy
     min_ttl                = var.cf_min_ttl
     default_ttl            = var.cf_default_ttl
     max_ttl                = var.cf_max_ttl

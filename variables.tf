@@ -72,6 +72,12 @@ variable "cf_logs" {
   default     = true
 }
 
+variable "cf_viewer_protocol_policy" {
+  description = "How HTTPs should be handled with the CloudFront distribution. Valid: allow-all, https-only, redirect-to-https"
+  type        = string
+  default     = "redirect-to-https"
+}
+
 variable "tags" {
   description = "Map of tags to apply to all resources."
   type        = map(any)
