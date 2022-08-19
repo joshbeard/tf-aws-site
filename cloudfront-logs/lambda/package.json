@@ -2,7 +2,7 @@
   "name": "cloudfront-logs",
   "version": "0.0.1",
   "dependencies": {
-    "aws-sdk": "2.1197.0"
+    "aws-sdk": "2.1199.0"
   },
   "devDependencies": {
     "eslint": "*",
