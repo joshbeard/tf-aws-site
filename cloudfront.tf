@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 resource "aws_cloudfront_distribution" "site_distribution" {
   origin {
-    domain_name = aws_s3_bucket.site.website_endpoint
+    domain_name = aws_s3_bucket_website_configuration.site.website_endpoint
     origin_id   = "S3Origin-${aws_s3_bucket.site.bucket}"
 
     origin_shield {
